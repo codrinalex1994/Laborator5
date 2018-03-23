@@ -34,4 +34,7 @@ public class Command {
         return courier.getLocation();
     }
 
+    public void setStatus(int status) {
+        this.status = status;
+    }
 }
