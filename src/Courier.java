@@ -4,7 +4,7 @@ public class Courier {
 
   private ArrayList<String> locatii = new ArrayList<>();
 
-  private String location;
+  private String location = new String("");
 
   public String getLocation() {
     return location;
