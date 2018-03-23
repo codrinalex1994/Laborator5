@@ -1,10 +1,11 @@
 public class Command {
 
+    private static int count=0;
     private int id;
     private int status;
 
-    public Command(Integer id) {
-        this.id = id;
+    public Command() {
+        this.id = count++;
         this.status = 0;
     }
 
