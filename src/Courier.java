@@ -11,16 +11,19 @@ public class Courier {
   }
 
   public void updateLocation(String location) {
-    addLocatie(this.location);
+     // if(!this.location.equals(""))
+        addLocatie(location);
     this.location = location;
   }
 
   public String getHistoryLocations() {
       StringBuilder sb = new StringBuilder();
+      sb.append("History : \n");
       for(String s : locatii){
           sb.append(s);
-          sb.append(" , ");
+          sb.append(", ");
       }
+      sb.setLength(sb.length()-2);
     return sb.toString();
   }
 
