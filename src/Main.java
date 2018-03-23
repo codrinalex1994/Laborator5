@@ -1,10 +1,24 @@
 public class Main {
     public static void main(String[] args) {
         Admin administrator = new Admin();
-        Command c1 = new Command();
-        Command c2 = new Command();
+        Courier courier = new Courier();
+
+
+        Command c1 = new Command(courier,1);
+        Command c2 = new Command(courier,2);
+
         administrator.addCommand(c1);
         administrator.addCommand(c2);
+
+
+        courier.updateLocation("Bacau");
+        courier.updateLocation("Iasi");
+        System.out.println(c1.getLocation());
+
+        courier.updateLocation("Botosani");
+        System.out.println(c2.getLocation());
+
+        System.out.println(courier.getHistoryLocations());
         System.out.println(administrator.getActiveCommands());
         System.out.println(administrator.getFinishedCommands());
     }
