@@ -12,7 +12,10 @@ public class Command {
         this.status = 0;
     }
 
-    public String getStatus() {
+    public int getStatus() {
+        return this.status;
+    }
+    public String getStatusName() {
         switch(status){
             case 0:
                 return "inactive";
@@ -34,4 +37,5 @@ public class Command {
     public String getLocation(){
         return courier.getLocation();
     }
+
 }
