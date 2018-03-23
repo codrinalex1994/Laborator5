@@ -15,8 +15,13 @@ public class Courier {
     this.location = location;
   }
 
-  public ArrayList<String> getCommands() {
-    return locatii;
+  public String getHistoryLocations() {
+      StringBuilder sb = new StringBuilder();
+      for(String s : locatii){
+          sb.append(s);
+          sb.append(" , ");
+      }
+    return sb.toString();
   }
 
   private void addLocatie(String locatieVeche) {
