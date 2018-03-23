@@ -22,7 +22,7 @@ public class Admin {
         List<Integer> list = new ArrayList<>();
 
         for(Command command : this.myCommand) {
-            if(command.getStatus() == 0) {
+            if(command.getStatus() == 3) {
                 list.add(command.getId());
             }
         }
