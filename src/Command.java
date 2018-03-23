@@ -3,7 +3,7 @@ public class Command {
     private static int count=0;
     private int id;
 
-    // 0 - inactiv, 1 - in pregatire, 2 - pe drum, 3 - finished
+    // 0 - inactiv, 1 - in progress, 2 - in delivery, 3 - delivered
     private int status;
     private Courier courier = new Courier();
 
