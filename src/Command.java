@@ -1,18 +1,18 @@
-import java.util.Vector;
-
 public class Command {
 
-  public Integer id;
+    private int id;
+    private int status;
 
-  public Integer status;
+    public Command(Integer id) {
+        this.id = id;
+        this.status = 0;
+    }
 
-    public Vector  myAdmin;
-    public Vector  myCourier;
-  
-  public void Command( id) {
-  }
+    public int getStatus() {
+        return this.status;
+    }
 
-  public void getStatus() {
-  }
-
+    public int getId() {
+        return id;
+    }
 }
