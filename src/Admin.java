@@ -1,4 +1,3 @@
-import java.util.Vector;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -6,29 +5,33 @@ public class Admin {
 
     public List<Command>  myCommand = new ArrayList<>();
 
-  public List<Command> getActiveCommands() {
-    List<Command> list = new ArrayList<>();
+    public String getActiveCommands() {
+        List<Integer> list = new ArrayList<>();
 
-    // 0 - inactiv, 1 - in pregatire, 2 - pe drum, 3 - finished
-    for(Command command : this.myCommand) {
-        if(command.getStatus() == 1 || command.getStatus() == 2) {
-            list.add(command);
+        // 0 - inactiv, 1 - in pregatire, 2 - pe drum, 3 - finished
+        for(Command command : this.myCommand) {
+            if(command.getStatus() == 1 || command.getStatus() == 2) {
+                list.add(command.getId());
+            }
         }
+
+        return list.toString();
     }
 
-    return list;
-  }
+    public String getFinishedCommands() {
+        List<Integer> list = new ArrayList<>();
 
-  public List<Command> getFinishedCommands() {
-      List<Command> list = new ArrayList<>();
+        for(Command command : this.myCommand) {
+            if(command.getStatus() == 0) {
+                list.add(command.getId());
+            }
+        }
 
-      for(Command command : this.myCommand) {
-          if(command.getStatus() == 0) {
-              list.add(command);
-          }
-      }
+        return list.toString();
+    }
 
-      return list;
-  }
+    public void addCommand(Command command) {
+        this.myCommand.add(command);
+    }
 
 }
