@@ -1,0 +1,52 @@
+// Decompiled by Jad v1.5.8f. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   Admin.java
+
+import java.util.*;
+
+public class Admin
+{
+
+    public Admin()
+    {
+        myCommand = new ArrayList();
+    }
+
+    public String getActiveCommands()
+    {
+        List list = new ArrayList();
+        Iterator iterator = myCommand.iterator();
+        do
+        {
+            if(!iterator.hasNext())
+                break;
+            Command command = (Command)iterator.next();
+            if(command.getStatus() == 1 || command.getStatus() == 2)
+                list.add(Integer.valueOf(command.getId()));
+        } while(true);
+        return list.toString();
+    }
+
+    public String getFinishedCommands()
+    {
+        List list = new ArrayList();
+        Iterator iterator = myCommand.iterator();
+        do
+        {
+            if(!iterator.hasNext())
+                break;
+            Command command = (Command)iterator.next();
+            if(command.getStatus() == 3)
+                list.add(Integer.valueOf(command.getId()));
+        } while(true);
+        return list.toString();
+    }
+
+    public void addCommand(Command command)
+    {
+        myCommand.add(command);
+    }
+
+    public List myCommand;
+}
